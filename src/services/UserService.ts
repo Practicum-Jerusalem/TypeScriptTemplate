@@ -7,7 +7,7 @@ class UserService {
     private static controller: UserController = new UserController()
 
 
-    static getAllUsers() {
+    static async getAllUsers() {
         // return users;
     }
 

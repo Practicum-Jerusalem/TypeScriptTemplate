@@ -6,7 +6,8 @@ const router = Router()
 // CRUD : all users, signle user, create user, update user
 router.get('/',async (req : Request, res: Response)=>{
     try{
-        res.send(UserService.getAllUsers())
+        let allUser = await UserService.getAllUsers()
+        res.send(allUser)
         // res.send(new UserService().getAllUsers())
     }
     catch(err){
