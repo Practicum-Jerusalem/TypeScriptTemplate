@@ -9,14 +9,14 @@ class UserController implements IController<IUser> {
         let user = await UserModel.create(data)
         return user
     }
-    read(filter: FilterQuery<IUser>): IUser[] {
+    async read(filter: FilterQuery<IUser>): Promise<IUser[]> {
         
         throw new Error('Method not implemented.')
     }
     async readOne(filter: FilterQuery<IUser>): Promise<IUser | null> {
         return await UserModel.findOne(filter)
     }
-    update(filter: FilterQuery<IUser>, newData: UpdateQuery<IUser>): IUser {
+    update(filter: FilterQuery<IUser>, newData: UpdateQuery<IUser>): Promise<IUser> {
         throw new Error('Method not implemented.')
     }
     del(filter: FilterQuery<IUser>): boolean {
