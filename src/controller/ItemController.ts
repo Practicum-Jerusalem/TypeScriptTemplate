@@ -12,7 +12,7 @@ class ItemController implements IController<IItem> {
     readOne(filter: FilterQuery<IItem>): Promise<IItem | null> {
         throw new Error("Method not implemented.");
     }
-    update(filter: FilterQuery<IItem>, newData: UpdateQuery<IItem>): Promise<IItem> {
+    update(filter: FilterQuery<IItem>, newData: UpdateQuery<IItem>): Promise<IItem | null> {
         throw new Error("Method not implemented.");
     }
     del(filter: FilterQuery<IItem>): boolean {

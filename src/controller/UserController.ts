@@ -16,7 +16,7 @@ class UserController implements IController<IUser> {
     async readOne(filter: FilterQuery<IUser>): Promise<IUser | null> {
         return await UserModel.findOne(filter)
     }
-    update(filter: FilterQuery<IUser>, newData: UpdateQuery<IUser>): Promise<IUser> {
+    update(filter: FilterQuery<IUser>, newData: UpdateQuery<IUser>): Promise<IUser | null> {
         throw new Error('Method not implemented.')
     }
     del(filter: FilterQuery<IUser>): boolean {
