@@ -1,8 +1,9 @@
-export const Mapper = <T>(dto: T, body: any): T => {
+type Constructor<T> = new (...args: any[]) => T;
+const Mapper = <T>(ctor: Constructor<T>, body: any): T => {
+    const dto = new ctor();
     if (!dto) {
         throw new Error('dto cannot be null or undefined');
     }
-
     const mappedDTO: Partial<T> = {};
 
     Object.keys(dto).forEach(key => {
@@ -20,3 +21,4 @@ export const Mapper = <T>(dto: T, body: any): T => {
 
     return mappedDTO as T;
 };
+export default Mapper;

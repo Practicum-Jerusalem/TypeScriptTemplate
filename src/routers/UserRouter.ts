@@ -1,6 +1,6 @@
 import {Request, Response, Router} from 'express'
 import UserService from '../services/UserService'
-import { Mapper } from '../helpers/Mapper'
+import  Mapper  from '../helpers/Mapper'
 const router = Router()
 
 // CRUD : all users, signle user, create user, update user
@@ -17,7 +17,8 @@ router.get('/',async (req : Request, res: Response)=>{
 
 router.post('/',async (req : Request, res: Response)=>{
     try{
-        let newBody = Mapper<CreateNewUserRequest>(new CreateNewUserRequest(),req.body)
+        let newBody = Mapper(CreateNewUserRequest, req.body)
+        // let newBody = Mapper<CreateNewUserRequest>(new CreateNewUserRequest(),req.body)
 
         res.send(UserService.createUser(newBody))
     }
